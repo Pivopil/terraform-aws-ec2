@@ -14,4 +14,7 @@ module "ec2" {
   vpc_security_group_ids      = [module.security_group.this_security_group_id]
   associate_public_ip_address = var.associate_public_ip_address
   iam_instance_profile        = var.iam_instance_profile
+  tags = {
+    username: local.username
+  }
 }
