@@ -1,5 +1,5 @@
 output "ids" {
-  description = "List of IDs of instances"
+  description = "List of ID of instances"
   value       = module.ec2.id
 }
 
