@@ -24,7 +24,7 @@ variable "iam_instance_profile" {
 variable "associate_public_ip_address" {
   description = "If true, the EC2 instance will have associated public IP address"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "aws_ami_owner" {
@@ -42,4 +42,22 @@ variable "instance_count" {
   description = "Number of instances to launch"
   type        = number
   default     = 1
+}
+
+variable "vpc_id" {
+  description = "VPC id like 'vpc-017f827c'"
+  type        = string
+  default     = null
+}
+
+variable "subnet_id" {
+  description = "Subnet id, if there is no subnet id, it will use first subnet with tag {Tier:target_subnet_tag} in target VPC or fail"
+  type        = string
+  default     = null
+}
+
+variable "target_subnet_tag" {
+  description = "Target subnet tag"
+  type        = string
+  default     = "Privat"
 }
